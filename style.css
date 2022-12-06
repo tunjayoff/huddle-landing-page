@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+	--ffamily-headings: "Poppins", sans-serif;
+	--ffamily-body: "Open Sans", sans-serif;
+
+	--fweight-text: 400;
+	--fweight-heading: 600;
+
+	--fcolor-button: hsl(300, 69%, 71%);
+	--fcolor-texts: white;
+
+	--bgcolor-body: hsl(257, 40%, 49%);
+	--bgcolor-hover: hsl(300, 69%, 71%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 100%;
+	min-height: 100vh;
+	background-color: var(--bgcolor-body);
+	background-image: url(/images/bg-desktop.svg);
+
+	color: var(--fcolor-texts);
+}
+
+main {
+	display: flex;
+	position: relative;
+	height: 75vh;
+	top: 50px;
+	flex-direction: column;
+	align-self: center;
+	justify-content: space-between;
+	width: 90%;
+}
+
+.logo {
+	position: relative;
+	margin-top: -8%;
+	margin-bottom: 5%;
+}
+
+.logo > a > img {
+	max-width: 100%;
+}
+section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 5%;
+}
+
+section > img {
+	width: 100%;
+}
+
+.text-div {
+	display: flex;
+	position: relative;
+	justify-self: left;
+	flex-direction: column;
+	justify-content: center;
+	top: -40px;
+}
+
+.text-div > h2 {
+	font-family: var(--ffamily-headings);
+	font-weight: var(--fweight-heading);
+	font-size: 38px;
+	width: 75%;
+	margin-bottom: 5%;
+}
+
+.text-div > p {
+	font-family: var(--ffamily-body);
+	font-weight: var(--fweight-text);
+	color: rgba(255, 255, 255, 0.838);
+
+	padding-right: 5%;
+	font-size: 18px;
+}
+
+.text-div > button {
+	width: 200px;
+	height: 50px;
+	margin-top: 7%;
+	color: var(--bgcolor-body);
+	letter-spacing: 1px;
+	border-style: none;
+	border-radius: 40px;
+	transition: background-color ease 200ms;
+}
+
+.text-div > button:hover {
+	cursor: pointer;
+	background-color: var(--bgcolor-hover);
+	color: white;
+}
+
+footer {
+	display: flex;
+	gap: 20px;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+footer img {
+	width: 32px;
+	filter: invert(90%);
+	transition: filter ease 500ms;
+}
+
+footer img:hover {
+	filter: invert(20%);
+}
+
+@media screen and (max-width: 900px) {
+	body {
+		background-repeat: repeat-y;
+	}
+	main {
+		width: 550px;
+	}
+	section {
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		text-align: center;
+	}
+	.text-div {
+		align-items: center;
+		margin: 40px 0;
+	}
+	.text-div > h2 {
+		width: 100%;
+	}
+	footer {
+		justify-content: center;
+	}
+	.logo {
+		margin-top: -20%;
+		margin-bottom: 10%;
+	}
+}
+@media screen and (max-width: 550px) {
+	body {
+		background-image: url(/images/bg-mobile.svg);
+		background-size: cover;
+	}
+	main {
+		width: 340px;
+	}
+}
